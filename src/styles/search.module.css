@@ -1,0 +1,9 @@
+.main{
+    max-height: 250px!important;
+    min-height: 250px!important;
+    top: 3.5rem!important;
+}
+
+.close{
+    text-align: right!important;
+}

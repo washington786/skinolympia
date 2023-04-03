@@ -1,0 +1,18 @@
+.main{
+    background-color: rgba(255, 227, 200, 0.3);
+    align-items: center!important;
+    justify-content: center!important;
+    align-self: center!important;
+}
+.wrapper{
+    align-items: center!important;
+    justify-content: center!important;
+    display: flex!important;
+    flex-direction: row!important;
+    align-self: center!important;
+    align-content: center!important;
+    text-align: center!important;
+}
+.link{
+    text-decoration: none!important;
+}
