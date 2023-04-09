@@ -1,0 +1,61 @@
+.HomePage {
+    
+  }
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .title{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    font-family: "Americana", serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .offer-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+  }
+
+  .tacbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+    background-color: #eee;
+  }
+  
+  input {
+    word-wrap: break-word;
+    height: 2em;
+    width: 2em;
+    vertical-align: middle;
+  }
+
+  .product-name{
+    font-family: "Muli, sans-serif";
+  }
+  
+  .product-price{
+    font-family: "Americana, serif";
+  }
+  

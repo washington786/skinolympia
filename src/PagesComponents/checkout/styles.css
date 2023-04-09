@@ -1,0 +1,8 @@
+.radio-group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .radio-group .MuiFormControlLabel-root {
+    margin-right: 2rem;
+  }

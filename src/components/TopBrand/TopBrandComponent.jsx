@@ -5,12 +5,32 @@ import {
   ShoppingBag,
   YouTube,
 } from "@mui/icons-material";
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/brand.module.css";
 import Logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 
-const TopBrandComponent = ({onHandleSearch}) => {
+const CartDropdown = ({ cartItems }) => {
+  console.log(cartItems);
+  return (
+    <div className="dropdown-menu dropdown-menu-end p-0" aria-labelledby="navbarDropdown">
+      {cartItems && cartItems.map((item) => (
+        <div key={item.id} className="dropdown-item">
+          {item.name} ({item.quantity})
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const TopBrandComponent = ({ onHandleSearch, cartItems }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const totalQuantity = cartItems ? cartItems.reduce((acc, item) => acc + item.quantity, 0) : 0;
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
+
   return (
     <div className={`${styles.main_container} container align-items-center`}>
       <div className="p-4 mx-2" onClick={onHandleSearch}>
@@ -25,9 +45,11 @@ const TopBrandComponent = ({onHandleSearch}) => {
         <Link to={'/login'}>
           <AccountBox className={`${styles.icons} text-secondary px-2`} />
         </Link>
-        <Link to={'/cart'}>
+        <Link to={'/cart'} className="dropdown-toggle" onClick={toggleDropdown}>
           <ShoppingBag className={`${styles.icons} text-secondary px-2`} />
+          {totalQuantity > 0 && <span className="badge bg-danger">{totalQuantity}</span>}
         </Link>
+        {isDropdownOpen && <CartDropdown cartItems={cartItems} />}
       </div>
     </div>
   );

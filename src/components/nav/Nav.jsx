@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import TopComponent from "../Top/TopComponent";
 import SearchComponent from "../Search/SearchComponent";
 
-const NavComponent = () => {
+const NavComponent = ({cartItems}) => {
   const [showSearch,setSearch] = useState(false);
 
   const onHandleSearch=()=>{

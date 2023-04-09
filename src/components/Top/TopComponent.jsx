@@ -3,13 +3,13 @@ import AlertsComponents from "../announcements/AlertsComponents";
 import TopBrandComponent from "../TopBrand/TopBrandComponent";
 import TopNavBar from "../TopNav/TopNavBar";
 
-const TopComponent = ({onHandleSearch}) => {
-  let alert = "SPRING IS HERE! USE CODE `SWEET_SPRING` FOR 10% OFF!"; 
+const TopComponent = ({onHandleSearch, cartItems}) => {
+  let alert = "ORDERS OVER R900 QUALIFY FOR FREE DELIVERY!"; 
   return (
     <Fragment>
       <div className="container">
-        <AlertsComponents alert={alert} />
-        <TopBrandComponent onHandleSearch={onHandleSearch}/>
+        <AlertsComponents alert={<div>{alert}</div>} />
+        <TopBrandComponent onHandleSearch={onHandleSearch} cartItems={cartItems}/>
       </div>
       <TopNavBar/>
     </Fragment>
